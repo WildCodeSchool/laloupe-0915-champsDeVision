@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ htmllang() }}">
+
+    {% include '_head.twig' %}
+
+    <body>
+        <div id="wrap">
+
+            {% include '_header.twig' %}
+            {% include '_navBar.twig' %}
+            {% include '_intro.twig' %}
+            {% include '_tiles.twig' %}
+            {% include '_presentation.twig' %}
+            {% include '_formulaire.twig' %}
+            {% include '_footer.twig' %}
+
+        </div>
+
+        <!--<script src="{{ paths.theme }}javascripts/foundation.min.js"></script>
+        <script src="{{ paths.theme }}javascripts/modernizr.js"></script>
+        <script src="{{ paths.theme }}javascripts/jquery.magnific-popup.min.js"></script>
+        <script src="{{ paths.theme }}javascripts/app.js" async defer></script>-->
+        <script src="{{ paths.theme }}javascripts/jquery-2.1.0.min.js"></script>
+        <script src="{{ paths.theme }}javascripts/bootstrap.min.js"></script>
+    </body>
+</html>

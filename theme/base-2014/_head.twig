@@ -1,0 +1,17 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+            {{ app.config.get('general/sitename') }}
+        {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
+    </title>
+
+    <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
+    <link rel="stylesheet" href="{{ paths.theme }}css/app.css">
+    <link rel="stylesheet" href="{{ paths.theme }}css/magnific-popup.css">-->
+    <link rel="stylesheet" href="{{ paths.theme }}css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ paths.theme }}css/styles.css">
+
+</head>
