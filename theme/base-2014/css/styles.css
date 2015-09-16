@@ -9,6 +9,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.thumb-size {
+  width: 200px;
+  height: 200px;
+  border: 0px;
+}
+
 .row {
   margin-left:0px;
   margin-right:0px;
