@@ -28,7 +28,6 @@ vignettes:
             variant: inline
 
 
-
 # Using YAML repeated nodes
 #
 # YAML allows the defining of "repeated nodes". These allow you to define a 'node'

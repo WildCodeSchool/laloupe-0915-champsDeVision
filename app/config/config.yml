@@ -6,8 +6,10 @@
 #
 # If you're trying out Bolt, just keep it set to SQLite for now.
 database:
-    driver: sqlite
-    databasename: bolt
+  driver: mysql
+  username: root
+  password: administrator
+  databasename: bolt_cdv
 
 # The name of the website
 sitename: Champs de vision
