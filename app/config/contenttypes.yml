@@ -24,8 +24,8 @@ vignettes:
             type: text
             info: lien vers le site web ou la vidéo
             pattern: url
-            default: https://
             variant: inline
+    default_status: published
 
 
 # Using YAML repeated nodes
