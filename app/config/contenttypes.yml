@@ -20,6 +20,11 @@ vignettes:
             type: select
             values: [print,web,video]
             info: Catégorie de la vignette
+        image:
+            type: image
+            attrib: alt
+            extensions: [ gif, jpg, png ]
+            info: Image associée à la vignette. Ne pas oublier de renseigner "Alt"
         lien:
             type: text
             info: lien vers le site web ou la vidéo
