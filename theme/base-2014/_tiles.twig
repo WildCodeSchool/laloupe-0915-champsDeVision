@@ -7,8 +7,6 @@
             <div class="main">
                 <ul id="og-grid" class="og-grid">
                     
-                    <!-- BOUCLE SUR LES VIGNETTES -->
-                    {% include '_vignette.twig' %}
                     {% include '_vignette.twig' %}
 
                 </ul>
@@ -18,3 +16,8 @@
     </div>
 </section>
 <div class="divider"></div>
+
+
+{% for vignette in record %}
+    <p>{{ record.titre }}</p>
+{% endfor %}

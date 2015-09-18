@@ -1,0 +1,107 @@
+# This file defines the contenttypes on the website. See the documentation for
+# details: http://docs.bolt.cm/content#defining-contenttypes
+
+
+vignettes:
+    name: Vignettes
+    singular_name: Vignette
+    fields:
+        titre:
+            type: text
+            info: Nom de la vignette
+            variant: inline
+            required: true
+            group: data
+        description:
+            type: textarea
+            info: Description de la vignette
+            height: 200px
+        categorie:
+            type: select
+            values: [print,web,video]
+            info: Catégorie de la vignette
+        lien:
+            type: text
+            info: lien vers le site web ou la vidéo
+            pattern: url
+            default: https://
+            variant: inline
+
+
+# Using YAML repeated nodes
+#
+# YAML allows the defining of "repeated nodes". These allow you to define a 'node'
+# with a 'key: &name' and referenced later with '<<: *name'
+#
+# Bolt allows you to define this with the special entry of '__nodes:' that itself 
+# won't create a Contenttype, but will allow you to use it in actual contenttypes
+# to prevent repeating yourself.
+#
+# To achieve this, first create a key '__nodes:' 
+#__nodes:
+#    field_defaults: &field_defaults
+#        title:
+#            type: text
+#            class: large
+#            group: main
+#        slug:
+#            type: slug
+#            uses: title
+#    template_defaults: &template_defaults
+#        template:
+#            type: templateselect
+#            filter: '*.twig'
+#            group: meta
+#
+# Then, as an example, you could create a Contenttype with default fields, with 
+# an additional 'image' field.
+#
+#contenttype_abc:
+#    name: Contenttype Abc
+#    fields:
+#        <<: *field_defaults
+#        image:
+#            type: image
+#            attrib: title
+#            extensions: [ gif, jpg, png ]
+#        <<: *template_defaults
+#    taxonomy: [ chapters ]
+#    recordsperpage: 10
+#
+# Alternatively, or additionally, you then can thencreate a Contenttype with 
+# default fields, and a 'select' field, and a different 'templateselect' option.
+#
+#contenttype_xyz:
+#    name: Contenttype Xyz
+#    fields:
+#        <<: *field_defaults
+#        selectfield:
+#            type: select
+#            values: [ none, foo, bar ]
+#        template:
+#            type: templateselect
+#            filter: '*_xyz.twig'
+#    taxonomy: [ tags ]
+#    recordsperpage: 20
+
+# Possible field types:
+#
+# text - varchar(256) - input type text.
+# integer - integer - Input field for integer numbers.
+# float - double - Input field for floating numbers, stored as 'Double'.
+# geolocation - text (65kb) - Input field for geolocation. Enter an address, and the location is geocoded to latitude/longitude coordinates
+# imagelist - text (65kb) - Input type for imagelists. Add multiple images with a description. Useful for image sliders, galleries, etcetera.
+# image - varchar(256) - image select/upload widget, stored as filename.
+# file - varchar(256) - file select/upload widget, stored as filename.
+# filelist - text (65kb) - Input type for a list of files. Including a description.
+# video - varchar(256) - Video embed widget, stored as filename.
+# html - text (65kb) - wysiwyg element.
+# textarea - varchar(32768) - Simple, plain < textarea > field.
+# markdown - varchar(32768) - Simple, plain < textarea > field, which is parsed as Markdown text.
+# datetime - datetime - date and time selector widget.
+# date - datetime - date selector widget.
+# select - varchar(256) - select with predefined values
+# templateselect - varchar(256) - select with template filenames
+# checkbox - integer - checkbox-field which is 1 (checked) or 0 (unchecked)
+
+# number (deprecated) - input type decimal(18,9), useful for storing number that need to be sortable
