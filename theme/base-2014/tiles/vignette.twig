@@ -1,0 +1,18 @@
+{% setcontent vignettes = 'vignettes' %}
+{% for vignette in vignettes %}
+    <li>
+        <a href="{{ vignette.lien }}" class="portfolio-box" data-largesrc="{{ paths.theme }}images/1.jpg" data-title="{{ vignette.titre }}" data-description="{{ vignette.description }}">
+            <img src="files/{{ vignette.image }}" class="thumb-size" alt="alt"/>
+            <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                        {{ vignette.categorie }}
+                    </div>
+                    <div class="project-name">
+                        {{ vignette.titre }}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+{% endfor %}

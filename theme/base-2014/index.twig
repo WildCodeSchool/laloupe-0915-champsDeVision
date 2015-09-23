@@ -1,5 +1,6 @@
+{% set divider = '<div class="divider"></div>' %}
 <!DOCTYPE html>
-<html class="no-js" lang="{{ htmllang() }}">
+<html lang="{{ htmllang() }}">
 
     {% include '_head.twig' %}
 
@@ -17,18 +18,59 @@
 
         </div>
 
-        <!--<script src="{{ paths.theme }}javascripts/foundation.min.js"></script>
-        <script src="{{ paths.theme }}javascripts/modernizr.js"></script>
-        <script src="{{ paths.theme }}javascripts/jquery.magnific-popup.min.js"></script>
-        <script src="{{ paths.theme }}javascripts/app.js" async defer></script>-->
         <script src="{{ paths.theme }}javascripts/jquery-2.1.0.min.js"></script>
         <script src="{{ paths.theme }}javascripts/bootstrap.min.js"></script>
 		<script src="{{ paths.theme }}javascripts/grid.js"></script>
         <script src="{{ paths.theme }}javascripts/smooth-scroll.js"></script>
+        <script src="{{ paths.theme }}javascripts/modernizr.custom.js"></script>
+        <script src="{{ paths.theme }}javascripts/scripts.js"></script>
+
         <script>
             $(function() {
                 Grid.init();
             });
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+        <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+        <script type="text/javascript">
+
+
+            function resetActive(event, step) {
+
+
+                $("div").each(function () {
+                    if ($(this).hasClass("activestep")) {
+                        $(this).removeClass("activestep");
+                    }
+                });
+
+                if (event.target.className == "col-md-2") {
+                    $(event.target).addClass("activestep");
+                }
+                else {
+                    $(event.target.parentNode).addClass("activestep");
+                }
+
+                hideSteps();
+                showCurrentStepInfo(step);
+            }
+
+            function hideSteps() {
+                $("div").each(function () {
+                    if ($(this).hasClass("activeStepInfo")) {
+                        $(this).removeClass("activeStepInfo");
+                        $(this).addClass("hiddenStepInfo");
+                    }
+                });
+            }
+
+            function showCurrentStepInfo(step) {
+                var id = "#" + step;
+                $(id).addClass("activeStepInfo");
+            }
         </script>
     </body>
 </html>

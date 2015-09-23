@@ -9,6 +9,40 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+h1,h2,h3,h4 {
+    font-family: 'Kreon', serif;
+    vertical-align:middle;
+}
+
+header {
+    height:450px;
+    color:#000000;
+}
+
+li {
+    text-align: center;
+}
+
+.circle {
+    background: #A6CE39;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    border: 10px solid #000000;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+}
+
+.block {
+    margin: 0;
+    margin-top: -100px;
+    height: 400px;
+    background-color: #ffffff;
+}
+
 .thumb-size {
   width: 200px;
   height: 200px;
@@ -39,7 +73,12 @@ body {
     padding-bottom: 30px;
 
 }
-
+#wrap > .container {
+    padding: 60px 15px 0;
+}
+.container .credit {
+    margin: 20px 0;
+}
 #footer a {
     color:#efefef;
 }
@@ -55,7 +94,6 @@ body {
 -------------------------------------------------- */
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
-
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
@@ -70,17 +108,6 @@ body {
 }
 .container .credit {
   margin: 20px 0;
-}
-
-header {
-  background: #333;
-  color:#555;
-}
-
-header .dropdown-menu {
-  top:74px;
-  background: #ffcc33;
-  border-width:0;
 }
 
 h1 {
@@ -162,7 +189,7 @@ h1 {
 
 #nav {
   width: 100%;
-  position:fixed;
+  position:static;
   top:0;
 }
 
@@ -178,39 +205,71 @@ h1 {
       float:none;
   }
 }
-  
+
 .navbar-nav {
-  margin: 1px 1px; 
-}  
-  
+    width: 50px;
+
+}
+
+.nav-justified {
+    width: 100%;
+}
+
+
+
+.navbar-inverse
+.navbar-nav>.active>a,
+.navbar-inverse
+.navbar-nav>
+.active>a:hover,
+.navbar-inverse
+.navbar-nav>
+.active>a:focus
+{
+    font-family: Verdana;
+    color: #000;
+    background-color: #fff;
+}
+
+
 /* customize nav style */
 .navbar-custom {
-    background-color: #2e2e2e;
-	font-weight:700;
-    text-transform:uppercase;
-    border-width:0;
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    border-bottom: 1px #EEEEEE solid;
+}
+.navbar-custom
+.navbar-nav>li>a {
+    background-color: #ffffff;
+    font-family: Verdana;
+    color: #000000;
+    font-size: 20px;
     margin: 0;
 }
-.navbar-custom  .navbar-nav>li>a {
-	color: #ddd;
-}
-.navbar-custom  .dropdown-menu li>a:hover {
-	color: #eee;
-}
-.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
-	background-color: #000;
-}
-.navbar-custom .navbar-nav>.dropdown>a .caret {
-	border-top-color: #999;
-	border-bottom-color: #999;
+.navbar-custom
+.navbar-inverse
+.navbar-nav>li>a:hover {
+    background-color: #ffffff;
+    font-family: Verdana;
+    color: #000000;
+    font-size: 20px;
+    margin: 0;
 }
 
 .navbar-collapse.in { /*3.0.2 bug workaround*/
     overflow-y: visible;
 }
 
+
+.navbar-inverse li>a:active {
+    background-color: #ffffff;
+    font-family: Verdana;
+    color: #000000;
+}
+
+
 .navbar-toggle {
-  color: #DDD;
 	outline:0;
 }
 
@@ -252,7 +311,7 @@ h1 {
 
 section {
   color: #ffffff;
-  min-height: 600px;
+  min-height: 700px;
   height: auto !important;
 
   padding-top:100px;
@@ -260,7 +319,7 @@ section {
 
 .bg-1 {
 
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+	background: url('../images/ble_bio.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -268,7 +327,7 @@ section {
 }
 
 .bg-2 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+	background: url('../images/bg2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -276,7 +335,7 @@ section {
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+	background: url('../images/bg2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -313,8 +372,77 @@ section {
   text-align: right;
 }
 
-.logo
+.logo {
+    margin-top: -25px;
+
+}
+
+.text-header
 {
-  display: block;
-  margin: 0 auto;
+    color: #000000;
+}
+
+.text-header h1
+{
+    color: #000000;
+}
+
+
+/* filter */
+
+.hiddenStepInfo {
+    display: none;
+}
+
+.activeStepInfo {
+    display: block !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.step {
+    margin-top: 27px;
+    text-align: center;
+}
+
+.step .col-md-2 {
+    background-color: transparent;
+    border: 1px solid #C0C0C0;
+    border-right: none;
+}
+
+.step .col-md-2:last-child {
+    border: 1px solid #C0C0C0;
+}
+
+.step .col-md-2:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.step .col-md-2:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.step .col-md-2:hover {
+    color: #F58723;
+    cursor: pointer;
+}
+
+.step .activestep {
+    color: #F58723;
+    height: 100px;
+    margin-top: -7px;
+    padding-top: 7px;
+    border-left: 6px solid #5CB85C !important;
+    border-right: 6px solid #5CB85C !important;
+    border-top: 3px solid #5CB85C !important;
+    border-bottom: 3px solid #5CB85C !important;
+    vertical-align: central;
+}
+
+.step .fa {
+    padding-top: 15px;
+    font-size: 40px;
 }

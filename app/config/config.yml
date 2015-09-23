@@ -8,8 +8,8 @@
 database:
   driver: mysql
   username: root
-  password: administrator
-  databasename: bolt_cdv
+  password: root
+  databasename: bolt
 
 # The name of the website
 sitename: Champs de vision

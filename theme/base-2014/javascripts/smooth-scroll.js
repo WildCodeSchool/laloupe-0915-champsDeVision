@@ -6,3 +6,4 @@ $('a[href^="#"]').click(function(){
     }, 'slow');
     return false;
 });
+
