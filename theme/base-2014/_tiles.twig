@@ -1,15 +1,23 @@
 <section  id="section2" class="bg-3">
-    <!-- Boutons de tri -->
-    {% include 'tiles/cat.twig' %}
-    <div class="divider"></div>
-    <div class="divider"></div>
-    <div class="divider"></div>
+    
+    {% include '_filter.twig' %}
 
-    <!-- div des tris -->
-    {% include 'tiles/content.twig' %}
+    <div class="row">
+        <div class="container">
+            <div class="main">
+                <ul id="og-grid" class="og-grid">
+                    
+                    {% include '_vignette.twig' %}
 
+                </ul>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </div>
 </section>
 <div class="divider"></div>
+
+
 {% for vignette in record %}
     <p>{{ record.titre }}</p>
 {% endfor %}
