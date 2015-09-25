@@ -2,6 +2,19 @@
 # details: http://docs.bolt.cm/content#defining-contenttypes
 
 
+backgrounds:
+    name: Backgrounds
+    singular_name: Background
+    fields:
+        image:
+            type: image
+            attrib: alt
+            extensions: [ gif, jpg, png ]
+            required: true
+            info: Image associée à la vignette. Ne pas oublier de renseigner "Alt"
+            group: data
+    default_status: published
+
 vignettes:
     name: Vignettes
     singular_name: Vignette
@@ -20,18 +33,59 @@ vignettes:
             type: select
             values: [print,web,video]
             info: Catégorie de la vignette
-        image:
-            type: image
-            attrib: alt
-            extensions: [ gif, jpg, png ]
-            info: Image associée à la vignette. Ne pas oublier de renseigner "Alt"
         lien:
             type: text
             info: lien vers le site web ou la vidéo
             pattern: url
             variant: inline
+        image_vignette:
+            type: image
+            attrib: alt
+            extensions: [ gif, jpg, png ]
+            info: Image associée à la vignette. Ne pas oublier de renseigner "Alt"
+            required: true
+            group: image
+        image_detail:
+            type: image
+            attrib: alt
+            extensions: [ gif, jpg, png ]
+            info: Ne pas oublier de renseigner "Alt"
     default_status: published
-
+           
+studio:
+    name: Studios
+    singular_name: Studio
+    fields:
+       description:
+            type: textarea
+            info: Description du Studio
+            height: 400px
+            required: true
+            group: data
+    default_status: published
+            
+article:
+    name: Articles
+    singular_name: Article
+    fields:
+        titre:
+            type: text
+            info: Nom de l'article
+            variant: inline
+            required: true
+            group: data
+        description:
+            type: textarea
+            info: Description de l'article
+            height: 400px
+            required: true
+        photo_illustration:
+            type: image
+            attrib: alt
+            extensions: [ gif, jpg, png ]
+            info: Photo ou illustration de l'article. Ne pas oublier de renseigner "Alt"
+    default_status: published
+            
 
 # Using YAML repeated nodes
 #

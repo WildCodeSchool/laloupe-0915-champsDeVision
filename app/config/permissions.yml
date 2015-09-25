@@ -61,7 +61,7 @@ roles-hierarchy:
 # inside the code, so they don't appear here.
 global:
     about: [ everyone ] # view the 'About Bolt' page
-    clearcache: [ admin, developer ]
+    clearcache: [ admin, developer, chief-editor ]
     contentaction: [ editor, admin, developer ]
     dashboard: [ everyone ]
     dbcheck: [ admin, developer ]
@@ -76,7 +76,7 @@ global:
     files: [ admin, developer, chief-editor, editor ]
     prefill: [ developer ]
     profile: [ everyone ] # edit own profile
-    settings: [ admin, developer, everyone ]
+    settings: [ admin, developer ]
     translation: [ developer ]
     useraction: [ admin, developer ] # enable/disable/delete
     useredit: [ admin, developer ] # user settings
@@ -151,7 +151,7 @@ contenttype-all:
     create: [ developer, admin, chief-editor ]
     publish: [ developer, admin, chief-editor ]
     depublish: [ developer, admin, chief-editor ]
-    delete: [ developer, admin ]
+    delete: [ developer, admin, chief-editor ]
     change-ownership: [ developer, admin ]
 
 contenttype-default:
